@@ -38,6 +38,6 @@ angular.module('ligabaloncestoApp')
         };
 
         $scope.clear = function () {
-            $scope.equipo = {nombre: null, localidad: null, fechaCreacion: null, posicionJugador: null, id: null};
+            $scope.equipo = {nombre: null, localidad: null, fechaCreacion: null, id: null};
         };
     });

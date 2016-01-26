@@ -48,8 +48,6 @@ public class EquipoResourceTest {
 
     private static final LocalDate DEFAULT_FECHA_CREACION = new LocalDate(0L);
     private static final LocalDate UPDATED_FECHA_CREACION = new LocalDate();
-    private static final String DEFAULT_POSICION_JUGADOR = "SAMPLE_TEXT";
-    private static final String UPDATED_POSICION_JUGADOR = "UPDATED_TEXT";
 
     @Inject
     private EquipoRepository equipoRepository;
@@ -75,7 +73,6 @@ public class EquipoResourceTest {
         equipo.setNombre(DEFAULT_NOMBRE);
         equipo.setLocalidad(DEFAULT_LOCALIDAD);
         equipo.setFechaCreacion(DEFAULT_FECHA_CREACION);
-        equipo.setPosicionJugador(DEFAULT_POSICION_JUGADOR);
     }
 
     @Test
@@ -97,7 +94,6 @@ public class EquipoResourceTest {
         assertThat(testEquipo.getNombre()).isEqualTo(DEFAULT_NOMBRE);
         assertThat(testEquipo.getLocalidad()).isEqualTo(DEFAULT_LOCALIDAD);
         assertThat(testEquipo.getFechaCreacion()).isEqualTo(DEFAULT_FECHA_CREACION);
-        assertThat(testEquipo.getPosicionJugador()).isEqualTo(DEFAULT_POSICION_JUGADOR);
     }
 
     @Test
@@ -113,8 +109,7 @@ public class EquipoResourceTest {
                 .andExpect(jsonPath("$.[*].id").value(hasItem(equipo.getId().intValue())))
                 .andExpect(jsonPath("$.[*].nombre").value(hasItem(DEFAULT_NOMBRE.toString())))
                 .andExpect(jsonPath("$.[*].localidad").value(hasItem(DEFAULT_LOCALIDAD.toString())))
-                .andExpect(jsonPath("$.[*].fechaCreacion").value(hasItem(DEFAULT_FECHA_CREACION.toString())))
-                .andExpect(jsonPath("$.[*].posicionJugador").value(hasItem(DEFAULT_POSICION_JUGADOR.toString())));
+                .andExpect(jsonPath("$.[*].fechaCreacion").value(hasItem(DEFAULT_FECHA_CREACION.toString())));
     }
 
     @Test
@@ -130,8 +125,7 @@ public class EquipoResourceTest {
             .andExpect(jsonPath("$.id").value(equipo.getId().intValue()))
             .andExpect(jsonPath("$.nombre").value(DEFAULT_NOMBRE.toString()))
             .andExpect(jsonPath("$.localidad").value(DEFAULT_LOCALIDAD.toString()))
-            .andExpect(jsonPath("$.fechaCreacion").value(DEFAULT_FECHA_CREACION.toString()))
-            .andExpect(jsonPath("$.posicionJugador").value(DEFAULT_POSICION_JUGADOR.toString()));
+            .andExpect(jsonPath("$.fechaCreacion").value(DEFAULT_FECHA_CREACION.toString()));
     }
 
     @Test
@@ -154,7 +148,6 @@ public class EquipoResourceTest {
         equipo.setNombre(UPDATED_NOMBRE);
         equipo.setLocalidad(UPDATED_LOCALIDAD);
         equipo.setFechaCreacion(UPDATED_FECHA_CREACION);
-        equipo.setPosicionJugador(UPDATED_POSICION_JUGADOR);
         
 
         restEquipoMockMvc.perform(put("/api/equipos")
@@ -169,7 +162,6 @@ public class EquipoResourceTest {
         assertThat(testEquipo.getNombre()).isEqualTo(UPDATED_NOMBRE);
         assertThat(testEquipo.getLocalidad()).isEqualTo(UPDATED_LOCALIDAD);
         assertThat(testEquipo.getFechaCreacion()).isEqualTo(UPDATED_FECHA_CREACION);
-        assertThat(testEquipo.getPosicionJugador()).isEqualTo(UPDATED_POSICION_JUGADOR);
     }
 
     @Test

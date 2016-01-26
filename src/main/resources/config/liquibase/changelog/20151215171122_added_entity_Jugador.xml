@@ -25,6 +25,9 @@
             <column name="nombre" type="varchar(255)"/>
             <column name="fecha_nacimiento" type="date"/>
             <column name="canastas_totales" type="integer"/>
+            <column name="rebotes_totales" type="integer"/>
+            <column name="asistencias_totales" type="integer"/>
+            <column name="posicion_campo" type="varchar(255)"/>
             <column name="equipo_id" type="bigint"/>
         </createTable>
         

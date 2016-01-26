@@ -15,6 +15,9 @@
             "nombre": "Nombre",
             "fechaNacimiento": "FechaNacimiento",
             "canastasTotales": "CanastasTotales",
+            "rebotesTotales": "RebotesTotales",
+            "asistenciasTotales": "AsistenciasTotales",
+            "posicionCampo": "PosicionCampo",
             "equipo": "Equipo"
         }
     }

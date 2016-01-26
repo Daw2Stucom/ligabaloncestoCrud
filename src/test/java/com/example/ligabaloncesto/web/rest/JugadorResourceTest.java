@@ -50,6 +50,14 @@ public class JugadorResourceTest {
     private static final Integer DEFAULT_CANASTAS_TOTALES = 1;
     private static final Integer UPDATED_CANASTAS_TOTALES = 2;
 
+    private static final Integer DEFAULT_REBOTES_TOTALES = 1;
+    private static final Integer UPDATED_REBOTES_TOTALES = 2;
+
+    private static final Integer DEFAULT_ASISTENCIAS_TOTALES = 1;
+    private static final Integer UPDATED_ASISTENCIAS_TOTALES = 2;
+    private static final String DEFAULT_POSICION_CAMPO = "SAMPLE_TEXT";
+    private static final String UPDATED_POSICION_CAMPO = "UPDATED_TEXT";
+
     @Inject
     private JugadorRepository jugadorRepository;
 
@@ -74,6 +82,9 @@ public class JugadorResourceTest {
         jugador.setNombre(DEFAULT_NOMBRE);
         jugador.setFechaNacimiento(DEFAULT_FECHA_NACIMIENTO);
         jugador.setCanastasTotales(DEFAULT_CANASTAS_TOTALES);
+        jugador.setRebotesTotales(DEFAULT_REBOTES_TOTALES);
+        jugador.setAsistenciasTotales(DEFAULT_ASISTENCIAS_TOTALES);
+        jugador.setPosicionCampo(DEFAULT_POSICION_CAMPO);
     }
 
     @Test
@@ -95,6 +106,9 @@ public class JugadorResourceTest {
         assertThat(testJugador.getNombre()).isEqualTo(DEFAULT_NOMBRE);
         assertThat(testJugador.getFechaNacimiento()).isEqualTo(DEFAULT_FECHA_NACIMIENTO);
         assertThat(testJugador.getCanastasTotales()).isEqualTo(DEFAULT_CANASTAS_TOTALES);
+        assertThat(testJugador.getRebotesTotales()).isEqualTo(DEFAULT_REBOTES_TOTALES);
+        assertThat(testJugador.getAsistenciasTotales()).isEqualTo(DEFAULT_ASISTENCIAS_TOTALES);
+        assertThat(testJugador.getPosicionCampo()).isEqualTo(DEFAULT_POSICION_CAMPO);
     }
 
     @Test
@@ -110,7 +124,10 @@ public class JugadorResourceTest {
                 .andExpect(jsonPath("$.[*].id").value(hasItem(jugador.getId().intValue())))
                 .andExpect(jsonPath("$.[*].nombre").value(hasItem(DEFAULT_NOMBRE.toString())))
                 .andExpect(jsonPath("$.[*].fechaNacimiento").value(hasItem(DEFAULT_FECHA_NACIMIENTO.toString())))
-                .andExpect(jsonPath("$.[*].canastasTotales").value(hasItem(DEFAULT_CANASTAS_TOTALES)));
+                .andExpect(jsonPath("$.[*].canastasTotales").value(hasItem(DEFAULT_CANASTAS_TOTALES)))
+                .andExpect(jsonPath("$.[*].rebotesTotales").value(hasItem(DEFAULT_REBOTES_TOTALES)))
+                .andExpect(jsonPath("$.[*].asistenciasTotales").value(hasItem(DEFAULT_ASISTENCIAS_TOTALES)))
+                .andExpect(jsonPath("$.[*].posicionCampo").value(hasItem(DEFAULT_POSICION_CAMPO.toString())));
     }
 
     @Test
@@ -126,7 +143,10 @@ public class JugadorResourceTest {
             .andExpect(jsonPath("$.id").value(jugador.getId().intValue()))
             .andExpect(jsonPath("$.nombre").value(DEFAULT_NOMBRE.toString()))
             .andExpect(jsonPath("$.fechaNacimiento").value(DEFAULT_FECHA_NACIMIENTO.toString()))
-            .andExpect(jsonPath("$.canastasTotales").value(DEFAULT_CANASTAS_TOTALES));
+            .andExpect(jsonPath("$.canastasTotales").value(DEFAULT_CANASTAS_TOTALES))
+            .andExpect(jsonPath("$.rebotesTotales").value(DEFAULT_REBOTES_TOTALES))
+            .andExpect(jsonPath("$.asistenciasTotales").value(DEFAULT_ASISTENCIAS_TOTALES))
+            .andExpect(jsonPath("$.posicionCampo").value(DEFAULT_POSICION_CAMPO.toString()));
     }
 
     @Test
@@ -149,6 +169,9 @@ public class JugadorResourceTest {
         jugador.setNombre(UPDATED_NOMBRE);
         jugador.setFechaNacimiento(UPDATED_FECHA_NACIMIENTO);
         jugador.setCanastasTotales(UPDATED_CANASTAS_TOTALES);
+        jugador.setRebotesTotales(UPDATED_REBOTES_TOTALES);
+        jugador.setAsistenciasTotales(UPDATED_ASISTENCIAS_TOTALES);
+        jugador.setPosicionCampo(UPDATED_POSICION_CAMPO);
         
 
         restJugadorMockMvc.perform(put("/api/jugadors")
@@ -163,6 +186,9 @@ public class JugadorResourceTest {
         assertThat(testJugador.getNombre()).isEqualTo(UPDATED_NOMBRE);
         assertThat(testJugador.getFechaNacimiento()).isEqualTo(UPDATED_FECHA_NACIMIENTO);
         assertThat(testJugador.getCanastasTotales()).isEqualTo(UPDATED_CANASTAS_TOTALES);
+        assertThat(testJugador.getRebotesTotales()).isEqualTo(UPDATED_REBOTES_TOTALES);
+        assertThat(testJugador.getAsistenciasTotales()).isEqualTo(UPDATED_ASISTENCIAS_TOTALES);
+        assertThat(testJugador.getPosicionCampo()).isEqualTo(UPDATED_POSICION_CAMPO);
     }
 
     @Test

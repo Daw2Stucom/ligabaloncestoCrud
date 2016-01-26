@@ -33,7 +33,6 @@ public class EquipoResource {
     private EquipoRepository equipoRepository;
 
     /**
-     *
      * POST  /equipos -> Create a new equipo.
      */
     @RequestMapping(value = "/equipos",

@@ -38,6 +38,6 @@ angular.module('ligabaloncestoApp')
         };
 
         $scope.clear = function () {
-            $scope.jugador = {nombre: null, fechaNacimiento: null, canastasTotales: null, id: null};
+            $scope.jugador = {nombre: null, fechaNacimiento: null, canastasTotales: null, rebotesTotales: null, asistenciasTotales: null, posicionCampo: null, id: null};
         };
     });

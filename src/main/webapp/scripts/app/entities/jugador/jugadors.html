@@ -45,6 +45,9 @@
                     <th translate="ligabaloncestoApp.jugador.nombre">Nombre</th>
                     <th translate="ligabaloncestoApp.jugador.fechaNacimiento">FechaNacimiento</th>
                     <th translate="ligabaloncestoApp.jugador.canastasTotales">CanastasTotales</th>
+                    <th translate="ligabaloncestoApp.jugador.rebotesTotales">RebotesTotales</th>
+                    <th translate="ligabaloncestoApp.jugador.asistenciasTotales">AsistenciasTotales</th>
+                    <th translate="ligabaloncestoApp.jugador.posicionCampo">PosicionCampo</th>
                     <th translate="ligabaloncestoApp.jugador.equipo">equipo</th>
                     <th></th>
                 </tr>
@@ -55,6 +58,9 @@
                     <td>{{jugador.nombre}}</td>
                     <td>{{jugador.fechaNacimiento}}</td>
                     <td>{{jugador.canastasTotales}}</td>
+                    <td>{{jugador.rebotesTotales}}</td>
+                    <td>{{jugador.asistenciasTotales}}</td>
+                    <td>{{jugador.posicionCampo}}</td>
                     <td>
                         <a ui-sref="equipo.detail({id:jugador.equipo.id})">{{jugador.equipo.nombre}}</a>
                     </td>

@@ -60,7 +60,7 @@ angular.module('ligabaloncestoApp')
                         size: 'lg',
                         resolve: {
                             entity: function () {
-                                return {nombre: null, fechaNacimiento: null, canastasTotales: null, id: null};
+                                return {nombre: null, fechaNacimiento: null, canastasTotales: null, rebotesTotales: null, asistenciasTotales: null, posicionCampo: null, id: null};
                             }
                         }
                     }).result.then(function(result) {

@@ -41,9 +41,6 @@ public class Equipo implements Serializable {
     @JsonDeserialize(using = ISO8601LocalDateDeserializer.class)
     @Column(name = "fecha_creacion")
     private LocalDate fechaCreacion;
-    
-    @Column(name = "posicion_jugador")
-    private String posicionJugador;
 
     @OneToMany(mappedBy = "equipo")
     @JsonIgnore
@@ -82,14 +79,6 @@ public class Equipo implements Serializable {
         this.fechaCreacion = fechaCreacion;
     }
 
-    public String getPosicionJugador() {
-        return posicionJugador;
-    }
-
-    public void setPosicionJugador(String posicionJugador) {
-        this.posicionJugador = posicionJugador;
-    }
-
     public Set<Jugador> getJugadors() {
         return jugadors;
     }
@@ -126,7 +115,6 @@ public class Equipo implements Serializable {
                 ", nombre='" + nombre + "'" +
                 ", localidad='" + localidad + "'" +
                 ", fechaCreacion='" + fechaCreacion + "'" +
-                ", posicionJugador='" + posicionJugador + "'" +
                 '}';
     }
 }

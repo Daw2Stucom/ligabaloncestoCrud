@@ -67,7 +67,7 @@ class EquipoGatlingTest extends Simulation {
             .exec(http("Create new equipo")
             .post("/api/equipos")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "nombre":"SAMPLE_TEXT", "localidad":"SAMPLE_TEXT", "fechaCreacion":"2020-01-01T00:00:00.000Z", "posicionJugador":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "nombre":"SAMPLE_TEXT", "localidad":"SAMPLE_TEXT", "fechaCreacion":"2020-01-01T00:00:00.000Z"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_equipo_url")))
             .pause(10)

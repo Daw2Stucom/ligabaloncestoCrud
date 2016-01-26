@@ -25,7 +25,6 @@
             <column name="nombre" type="varchar(255)"/>
             <column name="localidad" type="varchar(255)"/>
             <column name="fecha_creacion" type="date"/>
-            <column name="posicion_jugador" type="varchar(255)"/>
         </createTable>
         
     </changeSet>

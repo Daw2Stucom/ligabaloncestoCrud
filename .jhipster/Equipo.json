@@ -23,11 +23,6 @@
             "fieldId": 3,
             "fieldName": "fechaCreacion",
             "fieldType": "LocalDate"
-        },
-        {
-            "fieldId": 4,
-            "fieldName": "posicionJugador",
-            "fieldType": "String"
         }
     ],
     "changelogDate": "20151215170645",
