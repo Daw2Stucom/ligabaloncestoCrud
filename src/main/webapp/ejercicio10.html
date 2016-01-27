@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+    <html>
+<style>
+    table, th,td{
+        border: 1px solid greenyellow;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+    table tr:nth-child(odd){
+        background-color: #e4b9c0;
+    }
+    table tr:nth-child(even){
+        background-color: palegoldenrod;
+    }
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+<div ng-app="myApp" ng-controller="jugadorCtrl">
+    <table>
+        <tr>
+            <td>{{"Nombre Jugador"}}</td>
+            <td>{{"Nacimiento"}}</td>
+            <td>{{"Canastas"}}</td>
+            <td>{{"Rebotes"}}</td>
+            <td>{{"Asistencias"}}</td>
+            <td>{{"Posicion"}}</td>
+
+        </tr>
+        <tr ng-repeat="x in jugadores">
+            <td>{{x.nombre}}</td>
+            <td>{{x.fechaNacimiento}}</td>
+            <td>{{x.canastasTotales}}</td>
+            <td>{{x.rebotesTotales}}</td>
+            <td>{{x.asistenciasTotales}}</td>
+            <td>{{x.posicionCampo}}</td>
+        </tr>
+    </table>
+</div>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('jugadorCtrl', function($scope, $http) {
+        $http.get("api/jugadors").then(function (response) {
+            $scope.jugadores = response.data;
+        });
+    });
+
+</script>
+</body>
+</html>
